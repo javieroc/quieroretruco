@@ -1,6 +1,32 @@
 .table {
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   background-color: #4aad4a;
-  border:15px solid #a95555;
+  border: 15px solid #a95555;
+  border-radius: 50%;
+  position: relative;
+}
+
+.table:before {
+  content: '';
+  border: 7px solid rgba(0, 0, 0, .1);
+  display: block;
+  width: 615px;
+  height: 615px;
+  border-radius: 50%;
+  position:absolute;
+  top: -15px;
+  left: -15px;
+}
+
+.table:after {
+  content:'';
+  border: 7px solid rgba(0, 0, 0, .1);
+  display: block;
+  width: 585px;
+  height: 585px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
