@@ -1,0 +1,52 @@
+.player {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  background: rgb(13, 13, 13, .8);
+  border-radius: 5px;
+  color: white;
+  width: 240px;
+  position: absolute;
+}
+
+.playerImage {
+  width: 70px;
+  border-radius: 50%;
+}
+
+.player1 {
+  top: 0px;
+  left: 50%;
+  transform: translatex(-50%) translatey(-50%);
+}
+
+.player2 {
+  bottom: 0px;
+  left: 50%;
+  transform: translatex(-50%) translatey(50%);
+}
+
+.player3 {
+  top: 25%;
+  left: 0px;
+  transform: translatex(-50%) translatey(-50%);
+}
+
+.player4 {
+  top: 75%;
+  right: 0px;
+  transform: translatex(50%) translatey(-50%);
+}
+
+.player5 {
+  top: 75%;
+  left: 0px;
+  transform: translatex(-50%) translatey(-50%);
+}
+
+.player6 {
+  top: 25%;
+  right: 0px;
+  transform: translatex(50%) translatey(-50%);
+}
