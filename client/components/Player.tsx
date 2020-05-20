@@ -15,9 +15,9 @@ function Player({ data }: Props) {
         <h3>Jugador de prueba</h3>
       </div>
       <div className={styles.cards}>
-        <img src="/cards/back.png" />
-        <img src="/cards/back.png" />
-        <img src="/cards/back.png" />
+        <img src="/cards/back.png" className={styles.cardImage} />
+        <img src="/cards/back.png" className={styles.cardImage} />
+        <img src="/cards/back.png" className={styles.cardImage} />
       </div>
     </div>
   )

@@ -59,9 +59,13 @@
   left: 50%;
   bottom: 0px;
   transform: translatex(-50%) translatey(50%);
+  width: 180px;
+  display: flex;
+  justify-content: center;
   z-index: -1;
 }
 
-.cards img {
+.cardImage {
   width: 40px;
+  margin: 0 2px;
 }
