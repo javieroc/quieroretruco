@@ -3,13 +3,14 @@ import styles from './Player.module.css'
 interface Props {
   data: {
     image: string,
-    position: number
+    position: number,
+    actives: number
   }
 }
 
 function Player({ data }: Props) {
   return (
-    <div className={`${styles.playerContainer} ${styles['player' + data.position]}`}>
+    <div className={`${styles.playerContainer} ${styles[`player${data.actives}-${data.position}`]}`}>
       <div className={styles.player}>
         <img src={`/${data.image}`} className={styles.playerImage} />
         <h3>Jugador de prueba</h3>
