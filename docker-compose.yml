@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  api:
+    build: .
+    volumes:
+      - ./app:/app
+    ports:
+      - 8001:80
+    #command: ["/start.sh"]
+    # environment:
+    #   - FLASK_APP=main.py
+    #   - FLASK_DEBUG=1
+    #   - 'RUN=flask run --host=0.0.0.0 --port=80'
+    # command: flask run --host=0.0.0.0 --port=80
