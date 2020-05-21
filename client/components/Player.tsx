@@ -1,3 +1,4 @@
+import Card from './Card'
 import styles from './Player.module.css'
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 }
 
 function Player({ data }: Props) {
+  console.log('hand', data.hand)
   return (
     <div className={`${styles.playerContainer} ${styles[`player${data.actives}-${data.position}`]}`}>
       <div className={styles.player}>
@@ -17,9 +19,7 @@ function Player({ data }: Props) {
         <h3>Jugador de prueba</h3>
       </div>
       <div className={styles.cards}>
-        <img src="/cards/back.png" className={styles.cardImage} />
-        <img src="/cards/back.png" className={styles.cardImage} />
-        <img src="/cards/back.png" className={styles.cardImage} />
+        {data.hand.map((card, i) => <Card key={i} image={card} />)}
       </div>
     </div>
   )
