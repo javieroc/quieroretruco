@@ -1,8 +1,15 @@
 import Player from './Player'
 import styles from './Table.module.css'
 
+interface Player {
+  hand: string[],
+  image: string,
+  name: string,
+  position: number
+}
+
 interface Props {
-  players: string[]
+  players: Player[]
 }
 
 function Table({ players }: Props) {
@@ -13,7 +20,7 @@ function Table({ players }: Props) {
   return (
     <div className={styles.table}>
       <div className={styles.players}>
-        {activePlayers.map((p, i) => <Player key={i} data={{ image: `${p}.jpg`, position: i + 1, actives: activePlayers.length }} />)}
+        {activePlayers.map((p, i) => <Player key={i} data={{ ...p, actives: activePlayers.length }} />)}
       </div>
     </div>
   )

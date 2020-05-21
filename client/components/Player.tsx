@@ -2,9 +2,10 @@ import styles from './Player.module.css'
 
 interface Props {
   data: {
+    hand: string[],
     image: string,
     position: number,
-    actives: number
+    actives: number,
   }
 }
 
