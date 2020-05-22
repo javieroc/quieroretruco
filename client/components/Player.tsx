@@ -11,7 +11,6 @@ interface Props {
 }
 
 function Player({ data }: Props) {
-  console.log('hand', data.hand)
   return (
     <div className={`${styles.playerContainer} ${styles[`player${data.actives}-${data.position}`]}`}>
       <div className={styles.player}>

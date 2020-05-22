@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react'
+import io from "socket.io-client";
 import Layout from '../components/Layout'
 import Table from '../components/Table'
 import { generateHands } from '../utils'
@@ -13,6 +15,14 @@ function Game() {
     name: p,
     position: i + 1
   }))
+
+  useEffect(() => {
+    const socket = io('http://localhost:8001');
+
+    socket.on('connect', () => {
+      socket.emit('new player', { message: 'I\'m connected!' });
+    });
+  }, []);
 
   return (
     <Layout>

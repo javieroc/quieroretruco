@@ -1,11 +1,16 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.8
-
-RUN apt-get update && apt-get install -y ca-certificates
+FROM python:3.8
 
 WORKDIR /app
 
+RUN apt-get clean \
+    && apt-get -y update
+
+RUN apt-get -y install python3-dev
+
 COPY ./app/requirements.txt ./
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ./app ./
+COPY ./app .
+
+CMD [ "python", "main.py" ]
