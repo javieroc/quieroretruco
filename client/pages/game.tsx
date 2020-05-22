@@ -3,6 +3,7 @@ import io from "socket.io-client";
 import Layout from '../components/Layout'
 import Table from '../components/Table'
 import { generateHands } from '../utils'
+import styles from './game.module.css'
 
 const playersFakes = ['boxitracio', 'comisario', 'hijitus', 'larguirucho', 'neurus', 'pucho'];
 const numOfPlayers = 6
@@ -26,7 +27,9 @@ function Game() {
 
   return (
     <Layout>
-      <Table players={players} />
+      <div className={styles.game}>
+        <Table players={players} />
+      </div>
     </Layout>
   )
 }

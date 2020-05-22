@@ -21,6 +21,7 @@ class MyDocument extends Document {
             content='width=device-width, initial-scale=1.0'
           />
           <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css2?family=Milonga&display=swap" rel="stylesheet"></link>
           <style jsx global>{`
             body {
               margin: 0;

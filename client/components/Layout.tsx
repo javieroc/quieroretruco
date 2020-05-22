@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import styles from './Layout.module.css'
 
 interface Props {
@@ -6,9 +7,9 @@ interface Props {
 
 function Layout({ children }: Props) {
   return (
-    <div className={styles.container}>
+    <Fragment>
       {children}
-    </div>
+    </Fragment>
   )
 }
 
