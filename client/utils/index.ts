@@ -10,7 +10,7 @@ export function generateHands(numOfPlayers: number): string[][] {
   const cardsShuffled = shuffle(cards)
   const res: string[][] = Array(numOfPlayers).fill(0).map((_) => [])
   for (let i = 1; i <= numOfPlayers * 3; i += 1) {
-    res[i % 6].push(cardsShuffled.shift())
+    res[i % numOfPlayers].push(cardsShuffled.shift())
   }
   return res
 }
