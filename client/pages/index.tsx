@@ -12,7 +12,7 @@ function Home() {
   function handleModal() {
     Cookies.set('username', username)
     setDisplayModal(false)
-    Router.push('/game')
+    Router.push('/games/1')
   }
 
   return (
