@@ -1,3 +1,26 @@
+.tableContainer {}
+
+.waitingPlayer {
+  display: flex;
+  padding: 10px 0;
+  border-radius: 5px;
+  color: white;
+}
+
+.waitingPlayer h3 {
+  padding: 0 10px;
+}
+
+.waitingPlayer span {
+  font-size: 14px;
+  color: grey;
+}
+
+.waitingPlayerImage {
+  width: 70px;
+  border-radius: 50%;
+}
+
 .table {
   width: 600px;
   height: 600px;

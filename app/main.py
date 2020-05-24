@@ -16,13 +16,14 @@ def create_game(game):
 
 def add_player_to_game(player, game):
     if player not in games[game]:
-        join_room(game)
         games[game].append(player)
+        join_room(game)
 
 
-@app.route("/")
-def hello():
-    return "Hello World flask test"
+def remove_player_on_game(player, game):
+    if player in games[game]:
+        games[game].remove(player)
+        leave_room(game)
 
 
 @socketio.on('connect')
@@ -31,7 +32,7 @@ def handle_connection():
 
 
 @socketio.on('disconnect')
-def handle_connection():
+def handle_disconnection():
     print('someone were disconnected')
 
 
@@ -48,12 +49,19 @@ def handle_new_player(data):
 
     print(response)
     if game:
-        emit('join game', response)
+        emit('join game', response, room=game)
 
 
 @socketio.on('leave game')
-def handle_connection():
-    pass
+def handle_leave_connection(data):
+    game = data['game']
+    username = data['username']
+    remove_player_on_game(username, game)
+    print('leave game test')
+    response = json.dumps({
+        "game": games[game]
+    })
+    emit('join game', response, room=game)
 
 if __name__ == '__main__':
     # Only for debugging while developing

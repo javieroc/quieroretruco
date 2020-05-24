@@ -26,27 +26,26 @@ function Game() {
         socket.emit('leave game', { game, username });
       }
     }
-  });
+  }, [game]);
 
   useEffect(() => {
-    socket.off('join game').on('join game', (data) => {
+    socket.on('join game', (data) => {
       if (data) {
         const json = JSON.parse(data)
         const numOfPlayers = json.game.length
-        if (players.length !== numOfPlayers) {
-          const hands = generateHands(numOfPlayers)
-          const playersUpdated = json.game.map((p, i) => ({
-            hand: hands[i],
-            image: images[i] + '.jpg',
-            name: p,
-            position: i + 1
-          }))
-          setPlayers([...playersUpdated])
-        }
+        const hands = generateHands(numOfPlayers)
+        const playersUpdated = json.game.map((p, i) => ({
+          hand: hands[i],
+          image: images[i] + '.jpg',
+          name: p,
+          position: i + 1
+        }))
+        setPlayers([...playersUpdated])
       }
     })
-  });
+  }, [players]);
 
+  console.log('players', players)
   return (
     <Layout>
       <div className={styles.game}>
