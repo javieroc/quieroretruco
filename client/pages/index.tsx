@@ -3,6 +3,7 @@ import Router from 'next/router'
 import Cookies from 'js-cookie'
 import Layout from '../components/Layout'
 import Modal from '../components/Modal'
+import Nav from '../components/Nav'
 import styles from './home.module.css'
 
 function Home() {
@@ -18,14 +19,7 @@ function Home() {
   return (
     <Layout>
       <div className={styles.home}>
-        <nav>
-          <h2>QuieroReTruco</h2>
-          <ul>
-            <li>Reglas</li>
-            <li>Historia</li>
-            <li>Feedback</li>
-          </ul>
-        </nav>
+        <Nav />
 
         <img src="/1-espada.png" />
         <div>

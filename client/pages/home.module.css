@@ -1,6 +1,8 @@
 .home {
   color: white;
   font-family: 'Milonga', cursive;
+  width: 70%;
+  margin: auto;
 }
 
 .button {

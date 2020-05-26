@@ -22,14 +22,7 @@ class MyDocument extends Document {
           />
           <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
           <link href="https://fonts.googleapis.com/css2?family=Milonga&display=swap" rel="stylesheet"></link>
-          <style jsx global>{`
-            body {
-              margin: 0;
-              background-color: #262626;
-              font-family: 'Roboto', sans-serif;
-            }
-          `}
-          </style>
+          <link href="/css/styles.css" rel="stylesheet"></link>
         </Head>
         <body>
           <Main />
