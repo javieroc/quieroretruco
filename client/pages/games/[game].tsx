@@ -34,7 +34,9 @@ function Game() {
         const json = JSON.parse(data)
         const numOfPlayers = json.game.length
         const hands = generateHands(numOfPlayers)
-        const playersUpdated = json.game.map((p, i) => ({
+        const meIndex = json.game.indexOf(username)
+        const playersReOrdered = [...json.game.slice(meIndex), ...json.game.slice(0, meIndex)]
+        const playersUpdated = playersReOrdered.map((p, i) => ({
           hand: hands[i],
           image: images[i] + '.jpg',
           name: p,
