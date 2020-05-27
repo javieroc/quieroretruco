@@ -2,12 +2,11 @@ import Document, {
   Html,
   Head,
   Main,
-  NextScript,
-  NextDocumentContext
+  NextScript
 } from 'next/document'
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: NextDocumentContext) {
+  static async getInitialProps(ctx: any) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }

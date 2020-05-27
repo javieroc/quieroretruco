@@ -15,7 +15,7 @@ function Player({ data }: Props) {
   return (
     <div className={`${styles.playerContainer} ${styles[`player${data.actives}-${data.position}`]}`}>
       <div className={styles.player}>
-        <img src={`/${data.image}`} className={styles.playerImage} />
+        <img src={`/img/${data.image}`} className={styles.playerImage} />
         <h3>{data.name}</h3>
       </div>
       <div className={styles.cards}>

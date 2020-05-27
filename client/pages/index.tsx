@@ -21,7 +21,12 @@ function Home() {
       <div className={styles.home}>
         <Nav />
 
-        <img src="/1-espada.png" />
+        <div className={styles.cards}>
+          <img className={styles.card} src="/img/cards/1-espada.png" />
+          <img className={styles.card} src="/img/cards/1-copa.png" />
+          <img className={styles.card} src="/img/cards/1-basto.png" />
+          <img className={styles.card} src="/img/cards/1-oro.png" />
+        </div>
         <div>
           <button className={styles.button} onClick={() => setDisplayModal(true)}>Jugar</button>
         </div>

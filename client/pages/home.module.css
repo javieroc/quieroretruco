@@ -32,3 +32,14 @@
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+
+.cards {
+  position: relative;
+  height: 400px;
+}
+
+.card {
+  position: absolute;
+  left: 40px;
+  transform: rotate(-40deg);
+}

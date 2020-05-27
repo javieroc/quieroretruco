@@ -11,7 +11,7 @@ function Card({ image }: Props) {
   return (
     <img
       className={styles.cardImage}
-      src={isFlipped ? `/cards/${image}.png` : '/cards/back.png'}
+      src={isFlipped ? `/img/cards/${image}.png` : '/img/cards/back.png'}
       onClick={() => flip(true)}
     />
   )
