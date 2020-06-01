@@ -33,13 +33,47 @@
   box-sizing: border-box;
 }
 
-.cards {
-  position: relative;
-  height: 400px;
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card {
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 50px;
+  box-sizing: border-box;
+}
+
+.card1 {
   position: absolute;
   left: 40px;
   transform: rotate(-40deg);
+}
+
+.card2 {
+  position: absolute;
+  left: 100px;
+  transform: rotate(-20deg);
+}
+
+.card3 {
+  position: absolute;
+  left: 160px;
+  top: 20px;
+}
+
+.card4 {
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  transform: rotate(20deg);
 }
