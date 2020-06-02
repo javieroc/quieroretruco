@@ -31,9 +31,9 @@ function Home() {
 
           <div className={styles.cards}>
             <img className={styles.card1} src="/img/cards/1-espada.png" />
-            <img className={styles.card2} src="/img/cards/1-copa.png" />
+            <img className={styles.card2} src="/img/cards/1-oro.png" />
             <img className={styles.card3} src="/img/cards/1-basto.png" />
-            <img className={styles.card4} src="/img/cards/1-oro.png" />
+            <img className={styles.card4} src="/img/cards/1-copa.png" />
           </div>
         </div>
 
@@ -52,22 +52,66 @@ function Home() {
           <p>Los puntos se consiguen mediante los trucos y los envites, que son apuestas que se van realizando en el transcurso de las diferentes manos de cada ronda.</p>
 
           <h3>Valor de las cartas (de mayor a menor)</h3>
-          <ul>
-            <li>As de espadas (también llamado “la mayor”)</li>
-            <li>As de bastos</li>
-            <li>Siete de espadas (manilla de espadas)</li>
-            <li>Siete de oros (manilla de oros)</li>
-            <li>Treses</li>
-            <li>Doses</li>
-            <li>As de oros y as de copas (llamados “ases falsos”)</li>
-            <li>Doces</li>
-            <li>Onces</li>
-            <li>Dieces</li>
-            <li>Siete de copas y siete de bastos (llamados “sietes falsos” o “malos”)</li>
-            <li>Seises</li>
-            <li>Cincos</li>
-            <li>Cuatros</li>
-          </ul>
+          <table>
+            <tbody>
+              <tr>
+                <td>As de espadas (también llamado “macho”)</td>
+                <td><img src="/img/cards/1-espada.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>As de bastos (también llamado “hembra”)</td>
+                <td><img src="/img/cards/1-basto.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>Siete de espadas</td>
+                <td><img src="/img/cards/7-espada.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>Siete de oros</td>
+                <td><img src="/img/cards/7-oro.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>Treses</td>
+                <td><img src="/img/cards/3-copa.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>Doses</td>
+                <td><img src="/img/cards/2-oro.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>As de oros y as de copas (llamados “ases falsos”)</td>
+                <td><img src="/img/cards/1-copa.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>Doces</td>
+                <td><img src="/img/cards/12-basto.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>onces</td>
+                <td><img src="/img/cards/11-espada.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>Dieces</td>
+                <td><img src="/img/cards/10-oro.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>Siete de copas y siete de bastos (llamados “sietes falsos” o “malos”)</td>
+                <td><img src="/img/cards/7-basto.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>Seises</td>
+                <td><img src="/img/cards/6-oro.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>Cincos</td>
+                <td><img src="/img/cards/5-espada.png" width="30" /></td>
+              </tr>
+              <tr>
+                <td>Cuatros</td>
+                <td><img src="/img/cards/4-copa.png" width="30" /></td>
+              </tr>
+            </tbody>
+          </table>
 
           <h3>Cómo jugar al truco argentino</h3>
           <p>Al principio de la partida se decide por sorteo automático el jugador que es mano, es decir, el que empieza a jugar. En la siguiente ronda (si la hay) empezaría el jugador situado a la derecha del actual.</p>
