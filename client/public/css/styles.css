@@ -1,5 +1,7 @@
-body {
+body, html {
   margin: 0;
-  background-color: #262626;
+  padding: 0;
+  /* background-color: #262626; */
+  background-color: #EBEDF2;
   font-family: 'Roboto', sans-serif;
 }

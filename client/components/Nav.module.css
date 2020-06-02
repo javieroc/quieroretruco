@@ -1,7 +1,6 @@
 .navbar {
   background-color: #4aad4a;
-  border-top: 5px solid #a95555;
-  border-bottom: 5px solid #a95555;
+  border: 4px solid #a95555;
   color: white;
   display: flex;
   justify-content: space-between;
