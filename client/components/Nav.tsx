@@ -6,7 +6,7 @@ function Nav() {
       <div className={styles.brand}>QuieroReTruco</div>
       <ul className={styles.menu}>
         <li className={styles.menuItems}>Reglas</li>
-        <li className={styles.menuItems}>Historia</li>
+        <li className={styles.menuItems}>Github</li>
         <li className={styles.menuItems}>Feedback</li>
       </ul>
     </nav>
