@@ -20,7 +20,7 @@ function Table({ players }: Props) {
   return (
     <div className={styles.tableContainer}>
       {waitingPlayer && <div className={styles.waitingPlayer}>
-        <img src={`/${waitingPlayer.image}`} className={styles.waitingPlayerImage} />
+        <img src={`/img/${waitingPlayer.image}`} className={styles.waitingPlayerImage} />
         <h3 className={styles.waitingPlayerName}>{waitingPlayer.name}<span>  esperando compañer@...</span></h3>
       </div>}
 

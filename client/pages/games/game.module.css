@@ -1,4 +1,6 @@
 .game {
   display: flex;
   justify-content: center;
+  background-color: #262626;
+  height: 100vh;
 }

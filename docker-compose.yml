@@ -8,3 +8,13 @@ services:
       - 8001:8001
     environment:
      - PYTHONUNBUFFERED=1
+  nextjs:
+    ports:
+      - 3000:3000
+    build: ./client/
+    volumes:
+      - ./client/:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
+    depends_on:
+      - api
