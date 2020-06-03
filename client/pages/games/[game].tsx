@@ -4,6 +4,7 @@ import io from "socket.io-client";
 import Cookies from 'js-cookie'
 import Layout from '../../components/Layout'
 import Table from '../../components/Table'
+import Score from '../../components/Score'
 import { generateHands } from '../../utils'
 import styles from './game.module.css'
 
@@ -51,6 +52,7 @@ function Game() {
   return (
     <Layout>
       <div className={styles.game}>
+        <Score />
         <Table players={players} />
       </div>
     </Layout>
