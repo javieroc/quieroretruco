@@ -48,7 +48,6 @@ function Game() {
     })
   }, [players]);
 
-  console.log('players', players)
   return (
     <Layout>
       <div className={styles.game}>
