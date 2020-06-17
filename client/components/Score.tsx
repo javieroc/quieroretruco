@@ -95,12 +95,6 @@ function Score() {
         drawImage(context, image, x, y, w, h)
       }
     }
-
-    // drawImage(context, '/img/match-up.png', 250, 200, 5, 50)
-    // drawImage(context, '/img/match-right.png', 250, 200, 50, 5)
-    // drawImage(context, '/img/match-down.png', 300, 200, 5, 50)
-    // drawImage(context, '/img/match-left.png', 250, 250, 50, 5)
-    // drawRotatedImage(context, '/img/match-up.png', 0, -130, 5, 50, 45)
   }
 
   function drawTable(context: any, middlePosition: number) {
