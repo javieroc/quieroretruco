@@ -1,7 +1,10 @@
 from flask import Flask
 from flask_socketio import SocketIO, emit, join_room, leave_room
+from mongoengine import connect
+from models.Player import Player
 import json
 
+connect('quieroretruco', host='mongodb://mongodb/quieroretruco')
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app, cors_allowed_origins='*')
@@ -65,4 +68,6 @@ def handle_leave_connection(data):
 
 if __name__ == '__main__':
     # Only for debugging while developing
+    player = Player(nickname='Connan')
+    player.save()
     socketio.run(app, host='0.0.0.0', debug=True, port=8001, log_output=True)

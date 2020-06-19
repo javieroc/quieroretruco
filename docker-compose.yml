@@ -1,5 +1,11 @@
 version: "3.3"
 services:
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ~/.docker/quieroretruco/mongo:/data/db
   api:
     build: .
     volumes:
@@ -8,6 +14,8 @@ services:
       - 8001:8001
     environment:
      - PYTHONUNBUFFERED=1
+    depends_on:
+      - mongodb
   nextjs:
     ports:
       - 3000:3000
