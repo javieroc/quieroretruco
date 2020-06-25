@@ -1,4 +1,5 @@
 from mongoengine import Document, StringField
 
 class Player(Document):
-    nickname = StringField(max_length=200, required=True)
+    nickname = StringField(required=True, unique=True)
+    password = StringField(required=True)
