@@ -2,26 +2,26 @@ import Router from 'next/router'
 import Cookies from 'js-cookie'
 import React, { useState } from 'react'
 import Layout from '../../components/Layout'
+import { postData } from '../../utils/api'
 import styles from './login.module.css'
-// import { postData } from '../services/api'
 
 function LoginPage (props) {
   const [nickname, setNickname] = useState('')
   const [password, setPassword] = useState('')
-  const [errors, setErrors] = useState([])
+  const [error, setError] = useState('')
 
   async function handleSubmit (e) {
-    // e.preventDefault()
-    // const { data: token, errors } = await postData('/php/api/login', {
-    //   email,
-    //   password
-    // })
-    // if (errors.length > 0) {
-    //   setErrors(errors)
-    // } else {
-    //   Cookies.set('auth', token)
-    //   Router.push('/stock')
-    // }
+    e.preventDefault()
+    const data = await postData('/signin', {
+      nickname,
+      password
+    })
+    if (data.status === 'fail') {
+      setError(data.message)
+    } else {
+      Cookies.set('auth', data.token)
+      Router.push('/')
+    }
   }
 
   return (
@@ -47,15 +47,7 @@ function LoginPage (props) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {errors.length > 0 && (
-            <div>
-              {errors.map((e, i) => (
-                <p key={i}>
-                  {e}
-                </p>
-              ))}
-            </div>
-          )}
+          {error && <p>{error}</p>}
           <button type='submit' className={styles.button}>
             Login
           </button>

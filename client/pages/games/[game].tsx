@@ -5,7 +5,7 @@ import Cookies from 'js-cookie'
 import Layout from '../../components/Layout'
 import Table from '../../components/Table'
 import Score from '../../components/Score'
-import { generateHands } from '../../utils'
+import { generateHands } from '../../utils/miscellaneous'
 import styles from './game.module.css'
 
 const socket = io('http://localhost:8001');

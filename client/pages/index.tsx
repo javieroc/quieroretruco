@@ -5,8 +5,9 @@ import Layout from '../components/Layout'
 import Modal from '../components/Modal'
 import Nav from '../components/Nav'
 import styles from './home.module.css'
+import { isAuthenticated } from '../utils/auth'
 
-function Home() {
+function Home(props) {
   const [displayModal, setDisplayModal] = useState<boolean>(false)
   const [username, setUsername] = useState<string>('')
 
@@ -19,7 +20,7 @@ function Home() {
   return (
     <Layout>
       <div className={styles.home}>
-        <Nav />
+        <Nav isAuthenticated={props.isAuthenticated} />
 
         <div className={styles.heroContainer}>
           <div className={styles.heroText}>
@@ -258,6 +259,14 @@ function Home() {
       </div>
     </Layout>
   )
+}
+
+export async function getServerSideProps (context) {
+  return {
+    props: {
+      isAuthenticated: isAuthenticated(context)
+    }
+  }
 }
 
 export default Home;

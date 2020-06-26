@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, Response
 from flask_socketio import SocketIO, emit, join_room, leave_room
 from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 from mongoengine import connect
 from models.Player import Player
 from models.Game import Game
@@ -11,6 +12,7 @@ connect('quieroretruco', host='mongodb://mongodb/quieroretruco')
 
 # App
 app = Flask(__name__)
+CORS(app)
 app.config['SECRET_KEY'] = 'secret!'
 app.register_blueprint(auth.bp)
 app.register_blueprint(games.bp)
