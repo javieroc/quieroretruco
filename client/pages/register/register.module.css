@@ -1,0 +1,44 @@
+.register {
+  font-family: 'Milonga', cursive;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.registerForm {
+  background-color: #4aad4a;
+  border: 10px solid #a95555;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 360px;
+}
+
+.button {
+  box-shadow: inset 0px 1px 0px 0px #a6827e;
+  background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+  background-color: #7d5d3b;
+  border-radius: 3px;
+  border: 1px solid #54381e;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #4d3534;
+}
+
+.button:hover {
+  background: linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+  background-color: #634b30;
+}
+
+.input {
+  outline: none;
+  padding: 5px;
+  font-size: 20px;
+}
