@@ -1,5 +1,4 @@
 import Router from 'next/router'
-import Cookies from 'js-cookie'
 import React, { useState } from 'react'
 import Layout from '../../components/Layout'
 import { postData } from '../../utils/api'

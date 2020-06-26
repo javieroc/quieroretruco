@@ -13,18 +13,24 @@ function Nav({ isAuthenticated }) {
     <nav className={styles.navbar}>
       <div className={styles.brand}>QuieroReTruco</div>
       <ul className={styles.menu}>
-        <li className={styles.menuItems}>Reglas</li>
-        <li className={styles.menuItems}>Github</li>
-        <li className={styles.menuItems}>Feedback</li>
-        {isAuthenticated && <li className={styles.menuItems}><a style={{color: 'white', textDecoration: 'none'}} href="#" onClick={logout}>Logout</a></li>}
+        <li className={styles.menuItems}>
+          <a href="/#" className={styles.link}>Reglas</a>
+        </li>
+        <li className={styles.menuItems}>
+          <a href='https://github.com/javieroc/quieroretruco' target='_blank' className={styles.link}>Github</a>
+        </li>
+        <li className={styles.menuItems}>
+          <a href="/#" className={styles.link}>Feedback</a>
+        </li>
+        {isAuthenticated && <li className={styles.menuItems}><a href="#" onClick={logout} className={styles.link}>Logout</a></li>}
         {!isAuthenticated && <li className={styles.menuItems}>
             <Link href="/login">
-              <a style={{color: 'white', textDecoration: 'none'}}>Sign in</a>
+              <a className={styles.link}>Sign in</a>
             </Link>
           </li>}
           {!isAuthenticated && <li className={styles.menuItems}>
             <Link href="/register">
-              <a style={{color: 'white', textDecoration: 'none'}}>Sign up</a>
+              <a className={styles.link}>Sign up</a>
             </Link>
           </li>}
       </ul>
