@@ -4,6 +4,7 @@ import Cookies from 'js-cookie'
 import Layout from '../components/Layout'
 import Modal from '../components/Modal'
 import Nav from '../components/Nav'
+import GameList from '../components/GameList'
 import styles from './home.module.css'
 import { isAuthenticated } from '../utils/auth'
 
@@ -41,6 +42,8 @@ function Home(props) {
         <Modal show={displayModal} handleModal={handleModal}>
           <input type="text" name="username" className={styles.username} onChange={(e) => setUsername(e.target.value)} />
         </Modal>
+
+        <GameList />
 
         <div className={styles.rules}>
           <h2>Reglas Truco argentino</h2>

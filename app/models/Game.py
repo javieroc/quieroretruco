@@ -1,7 +1,14 @@
-from mongoengine import Document, IntField, StringField, ListField, ReferenceField
+from mongoengine import Document, EmbeddedDocument, IntField, StringField, ListField, ReferenceField, EmbeddedDocumentField
 from models.Player import Player
+
+
+class Setting(EmbeddedDocument):
+    limit = IntField()
+    gameFormat = StringField(choices=('flor', 'no-flor'))
+
 
 class Game(Document):
     score = IntField()
     status = StringField(choices=('waiting', 'playing', 'finished'))
-    # players = ListField(ReferenceField(Player))
+    settings = EmbeddedDocumentField(Setting)
+    players = ListField(ReferenceField(Player))

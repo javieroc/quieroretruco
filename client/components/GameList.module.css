@@ -1,0 +1,21 @@
+.gameList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.gameCard {
+  font-family: 'Roboto', sans-serif;
+  width: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-image: url('/img/wood.jpg');
+}
+
+.gameCardTitle {
+  display: flex;
+  justify-content: space-between;
+}

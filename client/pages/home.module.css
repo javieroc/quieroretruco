@@ -38,6 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 2px solid white;
 }
 
 .heroText {
@@ -88,7 +89,7 @@
   font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: flex-end;
-  background-color: #734429;
+  background-image: url('/img/wood.jpg');
   color: white;
   padding: 10px 20px;
 }

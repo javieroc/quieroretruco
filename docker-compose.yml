@@ -7,7 +7,7 @@ services:
     volumes:
       - ~/.docker/quieroretruco/mongo:/data/db
   api:
-    build: .
+    build: ./app/
     volumes:
       - ./app:/app
     ports:
