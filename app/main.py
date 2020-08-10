@@ -5,7 +5,7 @@ from flask_cors import CORS
 from mongoengine import connect
 from models.Player import Player
 from models.Game import Game
-from routes import auth, games
+from routes import auth, games, matches
 
 # Database
 connect('quieroretruco', host='mongodb://mongodb/quieroretruco')
@@ -16,6 +16,7 @@ CORS(app)
 app.config['SECRET_KEY'] = 'secret!'
 app.register_blueprint(auth.bp)
 app.register_blueprint(games.bp)
+app.register_blueprint(matches.bp)
 jwt = JWTManager(app)
 
 # Socket

@@ -2,13 +2,17 @@ from mongoengine import Document, EmbeddedDocument, IntField, StringField, ListF
 from models.Player import Player
 
 
-class Setting(EmbeddedDocument):
-    limit = IntField()
-    gameFormat = StringField(choices=('flor', 'no-flor'))
+class PlayerGame(EmbeddedDocument):
+    nickname = StringField
+    cards_played = ListField(StringField)
+    cards_hand = ListField(StringField)
+
+
+class State(EmbeddedDocument):
+    players = ListField(PlayerGame)
 
 
 class Game(Document):
-    score = IntField()
-    status = StringField(choices=('waiting', 'playing', 'finished'))
-    settings = EmbeddedDocumentField(Setting)
-    players = ListField(ReferenceField(Player))
+    boton = StringField()
+    turns = ListField(StringField)
+    states = ListField(State)
