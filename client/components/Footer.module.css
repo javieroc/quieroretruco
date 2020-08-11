@@ -1,0 +1,8 @@
+.footer {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  background-image: url('/img/wood.jpg');
+  color: white;
+  padding: 10px 20px;
+}

@@ -6,107 +6,10 @@
   margin: auto;
 }
 
-.button {
-  box-shadow: inset 0px 1px 0px 0px #a6827e;
-  background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
-  background-color: #7d5d3b;
-  border-radius: 3px;
-  border: 1px solid #54381e;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 18px;
-  padding: 10px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #4d3534;
-}
-
-.button:hover {
-  background: linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
-  background-color: #634b30;
-}
-
 .username {
   padding: 10px;
   font-size: 18px;
   margin: 8px 0;
   border: 1px solid #ccc;
   box-sizing: border-box;
-}
-
-.heroContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 2px solid white;
-}
-
-.heroText {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.cards {
-  position: relative;
-  width: 400px;
-  height: 400px;
-  margin: 50px;
-  box-sizing: border-box;
-}
-
-.card1 {
-  position: absolute;
-  left: 40px;
-  transform: rotate(-40deg);
-}
-
-.card2 {
-  position: absolute;
-  left: 100px;
-  transform: rotate(-20deg);
-}
-
-.card3 {
-  position: absolute;
-  left: 160px;
-  top: 20px;
-}
-
-.card4 {
-  position: absolute;
-  left: 200px;
-  top: 50px;
-  transform: rotate(20deg);
-}
-
-.rules {
-  padding: 20px;
-  border-top: 2px solid white;
-}
-
-.footer {
-  font-family: 'Roboto', sans-serif;
-  display: flex;
-  justify-content: flex-end;
-  background-image: url('/img/wood.jpg');
-  color: white;
-  padding: 10px 20px;
-}
-
-.td {
-  border: 1px solid rgb(190, 190, 190);
-  padding: 5px 10px;
-}
-
-.keyword {
-  display: inline-block;
-  padding: 1px 5px;
-  border-width: 1px 2px 2px 1px;
-  background: #f2f2f2;
-  border-style: solid;
-  color: #000;
-  border-color: #d9d9d9 #999 #999 #d9d9d9;
-  border-radius: 3px;
-  margin: 5px 0;
 }

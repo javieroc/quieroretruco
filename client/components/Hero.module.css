@@ -1,0 +1,65 @@
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid white;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 50px;
+  box-sizing: border-box;
+}
+
+.card1 {
+  position: absolute;
+  left: 40px;
+  transform: rotate(-40deg);
+}
+
+.card2 {
+  position: absolute;
+  left: 100px;
+  transform: rotate(-20deg);
+}
+
+.card3 {
+  position: absolute;
+  left: 160px;
+  top: 20px;
+}
+
+.card4 {
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  transform: rotate(20deg);
+}
+
+.button {
+  box-shadow: inset 0px 1px 0px 0px #a6827e;
+  background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+  background-color: #7d5d3b;
+  border-radius: 3px;
+  border: 1px solid #54381e;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #4d3534;
+}
+
+.button:hover {
+  background: linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+  background-color: #634b30;
+}
