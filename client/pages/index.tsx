@@ -1,25 +1,37 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Router from 'next/router'
 import Cookies from 'js-cookie'
 import Layout from '../components/Layout'
 import Modal from '../components/Modal'
 import Nav from '../components/Nav'
 import Hero from '../components/Hero'
-import GameList from '../components/GameList'
+import MatchList from '../components/MatchList'
 import Rules from '../components/Rules'
 import Footer from '../components/Footer'
 import { isAuthenticated } from '../utils/auth'
+import { getData } from '../utils/api'
 import styles from './home.module.css'
 
 function Home(props) {
   const [displayModal, setDisplayModal] = useState<boolean>(false)
   const [username, setUsername] = useState<string>('')
+  const [matches, setMatches] = useState([])
 
   function handleModal() {
     Cookies.set('username', username)
     setDisplayModal(false)
     Router.push('/games/1')
   }
+
+  async function fetchData () {
+    const matches = await getData('/matches')
+
+    setMatches(matches)
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   return (
     <Layout>
@@ -32,7 +44,7 @@ function Home(props) {
           <input type="text" name="username" className={styles.username} onChange={(e) => setUsername(e.target.value)} />
         </Modal>
 
-        <GameList />
+        <MatchList matches={matches} />
 
         <Rules />
 
