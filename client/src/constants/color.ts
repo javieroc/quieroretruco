@@ -1,0 +1,24 @@
+export enum COLOR {
+  WHITE = '#FFFFFF',
+  WHITE_SMOKE = '#F2F2F2',
+  SNOW = '#FAFAFA',
+
+  GRAY = '#E3E3E3',
+  MILD_GRAY = '#C7C7CC',
+  MID_GRAY = '#656D78',
+  DARK_GRAY = '#343A40',
+  LIGHT_GRAY = '#E9EAEB',
+
+  BLACK = '#000000',
+  BLACK_PEARL = '#16191C',
+
+  BLUE = '#0EADFF',
+  DARK_BLUE = '#0178B7',
+
+  GREEN = '#39CA8E',
+  RED = '#C50A33',
+  YELLOW = '#FFD301',
+
+  CHECK_GREEN = '#02B790',
+  CROSS_RED = '#F23C57',
+}
