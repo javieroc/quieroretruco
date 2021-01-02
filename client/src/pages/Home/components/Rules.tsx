@@ -162,7 +162,9 @@ const puntosEnvido = [
   },
 ]
 
-const rulesCss = css({})
+const rulesCss = css({
+  padding: '10px',
+})
 
 const keywordCss = css({})
 
@@ -263,7 +265,7 @@ function Rules() {
             dataIndex: 'noquiero',
           },
           {
-            title: 'quiero',
+            title: 'Quiero',
             dataIndex: 'quiero',
           },
         ]}
