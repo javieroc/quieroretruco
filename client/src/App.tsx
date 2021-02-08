@@ -4,13 +4,14 @@ import {
   Switch,
   Route,
  } from 'react-router-dom'
- import { Home } from './pages'
+ import { Home, Game } from './pages'
 
 function App(): JSX.Element {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/game" component={Game} />
       </Switch>
     </Router>
   )

@@ -1,11 +1,11 @@
 import { injectGlobal } from 'emotion';
-import { COLOR } from './constants/color';
+import { COLOR } from 'src/constants';
 
 export default function initGlobalCss(): void {
   // tslint:disable-next-line:no-unused-expression
   injectGlobal`
     html, body {
-      background-color: ${COLOR.WHITE_SMOKE} !important;
+      background-color: ${COLOR.GRAY} !important;
       height: 100%;
       margin: 0;
       padding: 0;

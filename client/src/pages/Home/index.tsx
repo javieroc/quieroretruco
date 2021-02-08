@@ -1,25 +1,25 @@
-import React from 'react'
-import { Layout, Menu } from 'antd'
-import { css } from 'emotion'
-import { COLOR } from '../../constants/color'
-import { Hero, Rules, Footer } from './components'
+import React from 'react';
+import { Layout } from 'antd';
+import { css } from 'emotion';
+import { COLOR } from 'src/constants';
+import { Hero, Rules, Footer } from './components';
 
 const layoutCss = css({
   maxWidth: '1200px',
   margin: 'auto',
   fontFamily: `'Milonga', cursive`,
-})
+});
 
 const headerCss = css({
   backgroundColor: `${COLOR.GREEN} !important`,
   color: `${COLOR.WHITE} !important`,
-})
+});
 
 const contentCss = css({
   backgroundColor: `${COLOR.GRAY} !important`,
-})
+});
 
-const { Header, Content } = Layout
+const { Header, Content } = Layout;
 
 function Home(): JSX.Element {
   return (

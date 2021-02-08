@@ -1,7 +1,7 @@
-import React from 'react'
-import { css } from 'emotion'
-import { Table } from 'antd'
-import { images } from '../../../assets'
+import React from 'react';
+import { Table } from 'antd';
+import { css } from 'emotion';
+import { images } from 'src/assets';
 
 const cards = [
   {
@@ -168,7 +168,7 @@ const rulesCss = css({
 
 const keywordCss = css({})
 
-function Rules() {
+function Rules(): JSX.Element {
   return (
     <div className={rulesCss}>
       <h2>Reglas Truco argentino</h2>
@@ -288,7 +288,7 @@ function Rules() {
       <p>Tirar una carta tapada puede resultar útil para engañar a los contrarios y esconder tu jugada.</p>
       <p>¡Atención! Si tiras una carta tapada, esa carta pierde su valor (todas las cartas le ganan y sólo puede empatar con otra carta tapada).</p>
     </div>
-  )
+  );
 }
 
 export { Rules }

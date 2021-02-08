@@ -1,6 +1,6 @@
-import React from 'react'
-import { css } from 'emotion'
-import { images } from '../../../assets'
+import React from 'react';
+import { css } from 'emotion';
+import { images } from 'src/assets';
 
 const heroCss = css({
   display: 'flex',
@@ -48,7 +48,7 @@ const card4Css = css({
   transform: 'rotate(20deg)',
 })
 
-function Hero() {
+function Hero(): JSX.Element {
   return (
     <div className={heroCss}>
       <div className={heroTextCss}>
