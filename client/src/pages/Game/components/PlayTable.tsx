@@ -7,7 +7,9 @@ interface Props {
   players: PlayerType[];
 }
 
-const containerCss = css({});
+const containerCss = css({
+  marginTop: '50px',
+});
 
 const waitingPlayerCss = css({
   display: 'flex',
@@ -28,8 +30,8 @@ const waitingPlayerCss = css({
 });
 
 const tableCss = css({
-  width: '600px',
-  height: '600px',
+  width: '500px',
+  height: '500px',
   backgroundColor: '#4aad4a',
   border: '15px solid #a95555',
   borderRadius: '50%',
@@ -39,8 +41,8 @@ const tableCss = css({
     content: '""',
     border: '7px solid rgba(0, 0, 0, .1)',
     display: 'block',
-    width: '615px',
-    height: '615px',
+    width: '515px',
+    height: '515px',
     borderRadius: '50%',
     position: 'absolute',
     top: '-15px',
@@ -50,8 +52,8 @@ const tableCss = css({
     content: '""',
     border: '7px solid rgba(0, 0, 0, .1)',
     display: 'block',
-    width: '585px',
-    height: '585px',
+    width: '485px',
+    height: '485px',
     borderRadius: '50%',
     position: 'absolute',
     top: 0,

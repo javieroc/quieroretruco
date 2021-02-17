@@ -9,6 +9,7 @@ interface Props {
 const cardImageCss = css({
   width: '50px',
   margin: '0 2px',
+  cursor: 'pointer',
 });
 
 function PlayCard({ image }: Props) {

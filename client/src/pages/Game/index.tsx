@@ -5,6 +5,7 @@ import { PlayTable } from './components';
 import { images } from 'src/assets';
 import { Player } from 'src/types';
 import { Utils } from 'src/utils';
+import { COLOR } from 'src/constants';
 
 const avatars = ['boxitracio', 'comisario', 'hijitus', 'larguirucho', 'neurus', 'pucho'];
 
@@ -23,9 +24,17 @@ const players: Player[] = avatars.map((avatar, index) => ({
   hand: hands[index],
 }));
 
+const headerCss = css({
+  backgroundColor: `${COLOR.GREEN} !important`,
+  color: `${COLOR.WHITE} !important`,
+});
+
+const { Header } = Layout;
+
 function Game() {
   return (
     <Layout>
+      <Header className={headerCss}>Quiero re truco</Header>
       <div className={containerCss}>
         <PlayTable players={players} />
       </div>
