@@ -3,11 +3,9 @@ import { Layout } from 'antd';
 import { css } from 'emotion';
 import { PlayTable } from './components';
 import { images } from 'src/assets';
-import { Player } from 'src/types';
+import { Game as GameType, Match, Player } from 'src/types';
 import { Utils } from 'src/utils';
 import { COLOR } from 'src/constants';
-
-const avatars = ['boxitracio', 'comisario', 'hijitus', 'larguirucho', 'neurus', 'pucho'];
 
 const containerCss = css({
   display: 'flex',
@@ -15,6 +13,15 @@ const containerCss = css({
   backgroundColor: '#262626',
   height: '100vh',
 });
+
+const headerCss = css({
+  backgroundColor: `${COLOR.GREEN} !important`,
+  color: `${COLOR.WHITE} !important`,
+});
+
+const { Header } = Layout;
+
+const avatars = ['boxitracio', 'comisario', 'hijitus', 'larguirucho', 'neurus', 'pucho'];
 
 const hands = Utils.generateHands(6);
 const players: Player[] = avatars.map((avatar, index) => ({
@@ -24,12 +31,33 @@ const players: Player[] = avatars.map((avatar, index) => ({
   hand: hands[index],
 }));
 
-const headerCss = css({
-  backgroundColor: `${COLOR.GREEN} !important`,
-  color: `${COLOR.WHITE} !important`,
-});
+const game: GameType = {
+  round1: {
+    handsHistory: [],
+    won: undefined,
+  },
+  round2: {
+    handsHistory: [],
+    won: undefined,
+  },
+  round3: {
+    handsHistory: [],
+    won: undefined,
+  },
+  score: {
+    us: 0,
+    they: 0,
+  }
+}
 
-const { Header } = Layout;
+const match: Match = {
+  id: '1',
+  status: 'waiting',
+  currentGame: game,
+  boton: players[0],
+  gameHistory: [],
+  players,
+}
 
 function Game() {
   return (

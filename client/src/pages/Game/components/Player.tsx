@@ -11,6 +11,7 @@ interface Props {
 
 const containerCss = css({
   position: 'absolute',
+  zIndex: 2,
 
   '&--player1-2': {
     bottom: '0px',
@@ -76,19 +77,20 @@ const containerCss = css({
 
 const playerCss = css({
   display: 'flex',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-  padding: '10px 0',
+  justifyContent: 'flex-start',
   background: 'rgb(13, 13, 13, .8)',
-  borderRadius: '5px',
+  borderRadius: '3px',
+  border: `2px solid ${COLOR.WHITE}`,
   width: '240px',
 
   '& img': {
     width: '70px',
-    borderRadius: '50%',
   },
-  '& h3': {
+  '& div': {
+    fontSize: '16px',
+    fontWeight: 'bold',
     color: COLOR.WHITE,
+    paddingLeft: '10px',
   }
 });
 
@@ -96,11 +98,10 @@ const cardsCss = css({
   display: 'flex',
   justifyContent: 'center',
   position: 'absolute',
-  left: '50%',
+  left: '65%',
   bottom: '0px',
   transform: 'translatex(-50%) translatey(50%)',
   width: '180px',
-  zIndex: -1,
 });
 
 function Player({ player, totalPlayers }: Props) {
@@ -108,7 +109,7 @@ function Player({ player, totalPlayers }: Props) {
     <div className={cx(containerCss, containerCss + `--player${player.position}-${totalPlayers}`)}>
       <div className={playerCss}>
         <img src={player.image} alt="Player avatar" />
-        <h3>{player.name}</h3>
+        <div>{player.name}</div>
       </div>
       <div className={cardsCss}>
         {player.hand.map((card, i) => <PlayCard key={i} image={card} />)}
