@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Layout } from 'antd';
 import { css } from 'emotion';
 import { PlayTable } from './components';
@@ -6,6 +6,7 @@ import { images } from 'src/assets';
 import { Game as GameType, Match, Player } from 'src/types';
 import { Utils } from 'src/utils';
 import { COLOR } from 'src/constants';
+import { GameContext } from './context';
 
 const containerCss = css({
   display: 'flex',
@@ -29,6 +30,7 @@ const players: Player[] = avatars.map((avatar, index) => ({
   image: images[avatar],
   position: index + 1,
   hand: hands[index],
+  isBoton: index === 0,
 }));
 
 const game: GameType = {
@@ -50,7 +52,7 @@ const game: GameType = {
   }
 }
 
-const match: Match = {
+const initialMatch: Match = {
   id: '1',
   status: 'waiting',
   currentGame: game,
@@ -59,14 +61,21 @@ const match: Match = {
   players,
 }
 
-function Game() {
+function Game(): JSX.Element {
+  const [match, setMatch] = useState(initialMatch);
+
   return (
-    <Layout>
-      <Header className={headerCss}>Quiero re truco</Header>
-      <div className={containerCss}>
-        <PlayTable players={players} />
-      </div>
-    </Layout>
+    <GameContext.Provider value={{
+      currentMatch: match,
+      setCurrentMatch: setMatch,
+    }}>
+      <Layout>
+        <Header className={headerCss}>Quiero re truco</Header>
+        <div className={containerCss}>
+          <PlayTable />
+        </div>
+      </Layout>
+    </GameContext.Provider>
   )
 }
 

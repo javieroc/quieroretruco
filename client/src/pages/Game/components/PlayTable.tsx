@@ -1,11 +1,8 @@
 import React from 'react';
 import { css } from 'emotion';
-import { Player as PlayerType } from 'src/types';
+import { Match } from 'src/types';
 import { Player } from './Player';
-
-interface Props {
-  players: PlayerType[];
-}
+import { useContext } from 'src/pages/Game/context';
 
 const containerCss = css({
   marginTop: '50px',
@@ -67,23 +64,33 @@ const playersCss = css({
   height: '100%',
 });
 
-function PlayTable({ players }: Props) {
-  const numOfPlayers = players.length
-  const waitingPlayer = players.length % 2 === 0 ? null : players[numOfPlayers - 1]
-  const activePlayers = players.length % 2 === 0 ? [...players] : players.slice(0, numOfPlayers - 1)
+function PlayTable(): JSX.Element {
+  const { currentMatch } = useContext()!;
+
+  function renderContent({ players, status }: Match): React.ReactElement {
+    const numOfPlayers = players.length;
+    const waitingPlayer = players.length % 2 === 0 ? null : players[numOfPlayers - 1];
+    const activePlayers = players.length % 2 === 0 ? [...players] : players.slice(0, numOfPlayers - 1);
+
+    return (
+      <>
+        {waitingPlayer && <div className={waitingPlayerCss}>
+          <img src={`/img/${waitingPlayer.image}`} alt="Waiting player" />
+          <h3>{waitingPlayer.name}<span>  esperando compañer@...</span></h3>
+        </div>}
+
+        <div className={tableCss}>
+          <div className={playersCss}>
+            {activePlayers.map((player, i) => <Player key={i} player={player} totalPlayers={activePlayers.length} />)}
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <div className={containerCss}>
-      {waitingPlayer && <div className={waitingPlayerCss}>
-        <img src={`/img/${waitingPlayer.image}`} alt="Waiting player" />
-        <h3>{waitingPlayer.name}<span>  esperando compañer@...</span></h3>
-      </div>}
-
-      <div className={tableCss}>
-        <div className={playersCss}>
-          {activePlayers.map((player, i) => <Player key={i} player={player} totalPlayers={activePlayers.length} />)}
-        </div>
-      </div>
+      {currentMatch && renderContent(currentMatch)}
     </div>
   )
 }

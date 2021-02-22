@@ -3,6 +3,7 @@ export interface Player {
   image: string;
   position: number;
   hand: string[];
+  isBoton: boolean;
 }
 
 type Status = 'waiting' | 'playing' | 'finished';

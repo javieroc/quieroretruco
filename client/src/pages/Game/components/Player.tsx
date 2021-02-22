@@ -3,6 +3,7 @@ import { css, cx } from 'emotion';
 import { Player as PlayerType } from 'src/types';
 import { PlayCard } from './PlayCard';
 import { COLOR } from 'src/constants';
+import { images } from 'src/assets';
 
 interface Props {
   player: PlayerType;
@@ -82,10 +83,8 @@ const playerCss = css({
   borderRadius: '3px',
   border: `2px solid ${COLOR.WHITE}`,
   width: '240px',
+  position: 'relative',
 
-  '& img': {
-    width: '70px',
-  },
   '& div': {
     fontSize: '16px',
     fontWeight: 'bold',
@@ -104,18 +103,31 @@ const cardsCss = css({
   width: '180px',
 });
 
-function Player({ player, totalPlayers }: Props) {
+const avatarCss = css({
+  width: '70px',
+});
+
+const starCss = css({
+  position: 'absolute',
+  width: 32,
+  height: 32,
+  bottom: -15,
+  left: -15,
+});
+
+function Player({ player, totalPlayers }: Props): JSX.Element {
   return (
     <div className={cx(containerCss, containerCss + `--player${player.position}-${totalPlayers}`)}>
       <div className={playerCss}>
-        <img src={player.image} alt="Player avatar" />
+        <img src={player.image} alt="Player avatar" className={avatarCss} />
         <div>{player.name}</div>
+        {player.isBoton && <img src={images['star']} className={starCss} alt="Boton player" />}
       </div>
       <div className={cardsCss}>
         {player.hand.map((card, i) => <PlayCard key={i} image={card} />)}
       </div>
     </div>
-  )
+  );
 }
 
 export { Player };
