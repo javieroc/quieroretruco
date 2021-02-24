@@ -34,6 +34,7 @@ const players: Player[] = avatars.map((avatar, index) => ({
 }));
 
 const game: GameType = {
+  currentRound: 'round1',
   round1: {
     handsHistory: [],
     won: undefined,

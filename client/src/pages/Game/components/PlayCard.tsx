@@ -4,6 +4,7 @@ import { images } from 'src/assets';
 
 interface Props {
   image: string
+  play: (card: string) => void;
 }
 
 const cardImageCss = css({
@@ -12,14 +13,21 @@ const cardImageCss = css({
   cursor: 'pointer',
 });
 
-function PlayCard({ image }: Props) {
+function PlayCard({ image, play }: Props) {
   const [isFlipped, flip] = useState<boolean>(false);
+
+  function handleOnClick() {
+    if (!isFlipped) {
+      flip(true);
+      play(image);
+    }
+  }
 
   return (
     <img
       className={cardImageCss}
       src={isFlipped ? images[image] : images['back']}
-      onClick={() => flip(true)}
+      onClick={handleOnClick}
       alt="Carta de Truco"
     />
   );

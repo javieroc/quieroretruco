@@ -1,9 +1,10 @@
 import React from 'react';
 import { css, cx } from 'emotion';
-import { Player as PlayerType } from 'src/types';
+import { Game, Player as PlayerType } from 'src/types';
 import { PlayCard } from './PlayCard';
 import { COLOR } from 'src/constants';
 import { images } from 'src/assets';
+import { useContext } from 'src/pages/Game/context';
 
 interface Props {
   player: PlayerType;
@@ -116,6 +117,25 @@ const starCss = css({
 });
 
 function Player({ player, totalPlayers }: Props): JSX.Element {
+  const { currentMatch, setCurrentMatch } = useContext()!;
+
+  function play(card: string) {
+    if (currentMatch) {
+      const { currentGame } = currentMatch;
+      const round = currentGame[currentGame.currentRound];
+      const game: Game = {
+        ...currentGame,
+        [currentGame.currentRound]: {
+          handsHistory: [...round.handsHistory, { player, card }],
+        }
+      };
+      setCurrentMatch({
+        ...currentMatch,
+        currentGame: game,
+      });
+    }
+  }
+
   return (
     <div className={cx(containerCss, containerCss + `--player${player.position}-${totalPlayers}`)}>
       <div className={playerCss}>
@@ -124,7 +144,7 @@ function Player({ player, totalPlayers }: Props): JSX.Element {
         {player.isBoton && <img src={images['star']} className={starCss} alt="Boton player" />}
       </div>
       <div className={cardsCss}>
-        {player.hand.map((card, i) => <PlayCard key={i} image={card} />)}
+        {player.hand.map((card, i) => <PlayCard key={i} image={card} play={play} />)}
       </div>
     </div>
   );
